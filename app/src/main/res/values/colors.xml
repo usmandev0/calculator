@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="bg_light">#FFFFFFFF</color>
+    <color name="bg_dark">#22252d</color>
+    <color name="action_btn_text_set_1">#904a4e</color>
+    <color name="action_btn_text_set_1_dark">#904a4e</color>
+    <color name="action_btn_text_set_2">#26e1c0</color>
+    <color name="action_btn_bg">#272b33</color>
+    <color name="all_btn_bg_dark">#2A2F3A</color>
+    <color name="all_btn_bg">#E1E1E1</color>
+    <color name="all_btn_bg_gl">#f9f9f9</color>
+    <color name="all_btn_bg_gl_dark">#292d36</color>
+
+    <color name="num_text_light">#000000</color>
+    <color name="num_text_dark">#ffffff</color>
+
+</resources>
