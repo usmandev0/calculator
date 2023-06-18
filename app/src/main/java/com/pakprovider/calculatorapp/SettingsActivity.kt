@@ -14,6 +14,8 @@ class SettingsActivity : AppCompatActivity() {
                 .beginTransaction()
                 .replace(R.id.settings, SettingsFragment())
                 .commit()
+//            uidhihjsdidojcids
+
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
