@@ -22,7 +22,8 @@
             android:src="@drawable/dots_dark"
             app:layout_constraintBottom_toTopOf="@+id/input"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/menu" />
 
         <TextView
             android:id="@+id/output"
