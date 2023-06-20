@@ -3,6 +3,7 @@ package com.pakprovider.calculatorapp
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.PopupMenu
@@ -81,6 +82,13 @@ class MainActivity : AppCompatActivity() {
                     R.id.settings -> {
 
                         startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
+
+                        true
+                    }
+                    R.id.rate_us -> {
+                        val url = "https://play.google.com/store/apps/developer?id=Pak+Provider"
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                        startActivity(intent)
 
                         true
                     }
