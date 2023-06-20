@@ -86,9 +86,14 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
                     R.id.rate_us -> {
+                        val url = "https://play.google.com/store/apps/details?id=com.pakprovider.calculatorapp"
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+
+                        true
+                    }
+                    R.id.more_apps -> {
                         val url = "https://play.google.com/store/apps/developer?id=Pak+Provider"
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                        startActivity(intent)
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 
                         true
                     }
