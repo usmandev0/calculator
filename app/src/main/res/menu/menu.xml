@@ -16,6 +16,9 @@
     <item
         android:id="@+id/more_apps"
         android:title="@string/more_apps"/>
+    <item
+        android:id="@+id/share_apps"
+        android:title="@string/share"/>
 
     <item
         android:id="@+id/exit_app"

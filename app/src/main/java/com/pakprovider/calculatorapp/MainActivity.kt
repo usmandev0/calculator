@@ -19,7 +19,7 @@ import javax.script.ScriptEngineManager
         private lateinit var binding: ActivityMainBinding
         var result: String = ""
         var allw = 1
-        private lateinit var linster:SharedPreferences.OnSharedPreferenceChangeListener
+        private var linster: SharedPreferences.OnSharedPreferenceChangeListener? = null
 
 
 @Suppress("DEPRECATION", "NAME_SHADOWING")
@@ -69,43 +69,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.threeDot.setOnClickListener {
-            val popupMenu = PopupMenu(this@MainActivity, binding.threeDot, Gravity.RIGHT)
-            popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
-            popupMenu.setOnMenuItemClickListener { menuItem ->
-                // Toast message on menu item clicked
-                when (menuItem.itemId) {
-                    R.id.exit_app -> {
-                        onBackPressed()
-                        true
-                    }
-
-                    R.id.settings -> {
-
-                        startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
-
-                        true
-                    }
-                    R.id.rate_us -> {
-                        val url = getString(R.string.rate_us_link)
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-
-                        true
-                    }
-                    R.id.more_apps -> {
-                        val url = getString(R.string.more_app_link)
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-
-                        true
-                    }
-
-                    else -> {
-                        false
-                    }
-                }
-
-            }
-            // Showing the popup menu
-            popupMenu.show()
+            menuitem()
 
         }
 
@@ -305,7 +269,56 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
     }
 
+@SuppressLint("RtlHardcoded")
+fun menuitem(){
 
+        val popupMenu = PopupMenu(this@MainActivity, binding.threeDot, Gravity.RIGHT)
+        popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
+        popupMenu.setOnMenuItemClickListener { menuItem ->
+            // Toast message on menu item clicked
+            when (menuItem.itemId) {
+                R.id.exit_app -> {
+                    onBackPressed()
+                    true
+                }
+
+                R.id.settings -> {
+
+                    startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
+
+                    true
+                }
+                R.id.rate_us -> {
+                    val url = getString(R.string.rate_us_link)
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+
+                    true
+                }
+                R.id.more_apps -> {
+                    val url = getString(R.string.more_app_link)
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+
+                    true
+                }
+                R.id.share_apps ->{
+                    val textToShare = getString(R.string.rate_us_link)// The text you want to share
+
+                    val intent = Intent(Intent.ACTION_SEND)
+                    intent.type = "text/plain"
+                    intent.putExtra(Intent.EXTRA_TEXT, textToShare)
+                    startActivity(Intent.createChooser(intent, "Share via"))
+                    true
+                }
+
+                else -> {
+                    false
+                }
+            }
+
+        }
+        // Showing the popup menu
+        popupMenu.show()
+}
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         // Create the object of AlertDialog Builder class
